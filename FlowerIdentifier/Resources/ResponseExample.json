@@ -1,0 +1,28 @@
+{
+    "commonName": "{The name of the plant}",
+    "scientificName": "{The the scientific name of the plant}",
+    "description": "{A brief description of the plant}",
+    "health": {
+        "status": "{One of the following options based on the plant's health: excellent, good, ok, sick, verySick}",
+        "problems": [
+            "{Health problem 1 and how to improve, in short}",
+            "{Health problem 2 and how to improve, in short}"
+            "{Health problem 3 and how to improve, in short}"
+        ]
+    }
+    "temperatureRange": "{The ideal temperature range for the plant, in the following format: 18 - 30 ºC / 52 - 68 ºF}",
+    "geography": "{Primary continets or regions, for example: North America & Europe. Do not include more than 4 words.}",
+    "sunlight": "{Short sunlight description, for example: Partial Sun}",
+    "rarityIndex": "{Short descripiton about how rare the plant is, for example: Very Rare}",
+    "careInstructions": [
+        "{Include care instruction 1}",
+        "{Include care instruction 2}",
+        "{Include care instruction 3}",
+        "{Include care instruction 4}"
+    ],
+    "bloomingSeason": "{Include blooming season, include only if relevant, for example: Year-round, with peak bloom in spring and fall}",
+    "uses": [
+        "{Include potential flower use 1}",
+        "{Include potential flower use 2}"
+    ]
+}
