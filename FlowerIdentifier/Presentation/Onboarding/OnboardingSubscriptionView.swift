@@ -18,7 +18,7 @@ struct OnboardingSubscriptionView: View {
            let purchaseTitle = subscriptionModel.purchaseTitle(for: onboardingProduct) {
             return purchaseTitle
         } else {
-            return "Get started with Plant Identifier AI now!"
+            return "Get started with Flower Identifier now!"
         }
     }
     

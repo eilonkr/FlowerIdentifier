@@ -15,7 +15,7 @@ struct RequestReview: ViewModifier {
     func body(content: Content) -> some View {
         if userState.didResponsePositivelyToReviewRequest == false {
             content
-                .alert("Finding Plant Identifier AI Useful?", isPresented: $isPresented) {
+                .alert("Finding Flower Identifier Useful?", isPresented: $isPresented) {
                     Button("Not Now") {
                         AnalyticsService.logEvent(name: "review_request_not_now")
                     }

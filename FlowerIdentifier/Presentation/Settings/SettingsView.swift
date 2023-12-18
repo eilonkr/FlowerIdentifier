@@ -99,7 +99,7 @@ struct SettingsView: View {
                                endPoint: .bottom)
             )
             .overlay {
-                Text("Plant Identifier AI")
+                Text("Flower Identifier")
                     .font(.system(size: 24, weight: .bold, width: .expanded))
                     .foregroundStyle(Color.title.opacity(0.75))
             }

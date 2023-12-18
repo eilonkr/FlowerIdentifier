@@ -25,7 +25,7 @@ struct Constants {
     }
     
     struct Email {
-        static let emailData = EmailData(subject: "Feature / Improvement Request for Plant Identifier AI",
+        static let emailData = EmailData(subject: "Feature / Improvement Request for Flower Identifier",
                                          recipients: ["eilonkrauthammer@gmail.com"],
                                          body: "<Please add your request here>")
     }

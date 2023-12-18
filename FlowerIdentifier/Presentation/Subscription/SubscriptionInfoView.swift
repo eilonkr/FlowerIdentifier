@@ -11,7 +11,7 @@ struct SubscriptionInfoView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             HStack(spacing: 12) {
-                Text("Plant Identifier AI")
+                Text("Flower Identifier")
                     .font(.system(.title2, design: .rounded, weight: .bold))
                     .foregroundStyle(.title)
                 

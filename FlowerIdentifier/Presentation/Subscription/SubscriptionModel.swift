@@ -59,7 +59,7 @@ class SubscriptionModel: ObservableObject {
         return if productModel.hasFreeTrial, let introString = productModel.introString {
             "Unlock unlimited access for just \(productModel.productDescription) with \(introString)"
         } else {
-            "Unlock unlimited access to Plant Identifier AI for just \(productModel.productDescription)"
+            "Unlock unlimited access to Flower Identifier for just \(productModel.productDescription)"
         }
     }
     
