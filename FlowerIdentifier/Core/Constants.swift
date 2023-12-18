@@ -12,8 +12,8 @@ struct Constants {
     struct URLs {
         //static let appstoreURL: String? = "https://apps.apple.com/app/write-ai-writing-assistant/id6450653057"
         static let contactURL = "mailto:eilonkrauthammer@gmail.com"
-        static let privacyPolicyURLString = "https://docs.google.com/document/d/1hAbRgortW7j7ONB6_qZHVBMt1uE4dv394nkeZhSO-4Q/edit?usp=sharing"
-        static let termsOfServiceURLString = "https://docs.google.com/document/d/1YR3n0AHXajkWXkPnbf2JQkrhIBmxzmOUtDAz2KsLNzE/edit?usp=sharing"
+        static let privacyPolicyURLString = "https://docs.google.com/document/d/1tU4R7Vbhpnd5t8fAqBrMsJLBRSzIvJiw6he8WzOQm8o/edit?usp=sharing"
+        static let termsOfServiceURLString = "https://docs.google.com/document/d/1RXl2M1B9ED-NjVuE1Kpio_o3qPuDZDRXRTnYCzWKYR8/edit?usp=sharing"
         static let appReviewURL = "https://apps.apple.com/app/id6455081726?action=write-review"
     }
     
