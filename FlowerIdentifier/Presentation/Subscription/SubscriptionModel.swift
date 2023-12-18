@@ -10,28 +10,22 @@ import Adapty
 
 class SubscriptionModel: ObservableObject {
     enum Product: String, Hashable {
-        case unlimitedWeekly = "PlantIdentifierAI.Weekly.3USD"
-        case unlimitedMonthly = "PlantIdentifierAI.Monthly.6USD"
-        case unlimitedAnnual = "PlantIdentifierAI.Annual.40USD"
-        case unlimitedAnnualFreeTrial = "PlantIdentifierAI.Annual.40USD.3Days.FreeTrial"
+        case unlimitedWeekly = "FlowerIdentifier.Weekly.3USD"
+        case unlimitedAnnualFreeTrial = "FlowerIdentifier.Yearly.35USD.3Day.FreeTrial"
         
         var title: String {
             return switch self {
             case .unlimitedWeekly:
                 "Unlimited Weekly"
-            case .unlimitedMonthly:
-                "Unlimited Monthly"
-            case .unlimitedAnnual, .unlimitedAnnualFreeTrial:
+            case .unlimitedAnnualFreeTrial:
                 "Unlimted Annual"
             }
         }
         
         func badgeTitle(hasFreeTrial: Bool) -> String? {
             return switch self {
-            case .unlimitedMonthly, .unlimitedWeekly:
+            case .unlimitedWeekly:
                 nil
-            case .unlimitedAnnual:
-                "BEST VALUE"
             case .unlimitedAnnualFreeTrial:
                 hasFreeTrial ? "FREE TRIAL" : "BEST VALUE"
             }
@@ -66,19 +60,8 @@ class SubscriptionModel: ObservableObject {
     // MARK: - Private
     private func parseProductsToOfferings() {
         let sortedProducts = products.sorted { $0.price > $1.price }
-        let filterMonthlyOrWeeklyProduct = [Product.unlimitedWeekly, Product.unlimitedMonthly].randomElement()!
         productDisplayItems = sortedProducts
             .compactMap { parseProductModelToDisplayItem($0) }
-            .filter {
-                if FeatureFlags.isFreeTrialAllowed == false && $0.hasFreeTrial {
-                    return false
-                } else if FeatureFlags.isFreeTrialAllowed && $0.productId == Product.unlimitedAnnual.rawValue {
-                    return false
-                }
-                
-                return true
-            }
-            .filter { $0.productId != filterMonthlyOrWeeklyProduct.rawValue }
     }
     
     private func parseProductModelToDisplayItem(_ productModel: AdaptyPaywallProduct) -> ProductDisplayItem? {
@@ -96,15 +79,6 @@ class SubscriptionModel: ObservableObject {
     
     private func createOnboardingProduct() -> AdaptyPaywallProduct? {
         let availableProducts = products
-            .filter {
-                if FeatureFlags.isFreeTrialAllowed == false && $0.hasFreeTrial {
-                    return false
-                } else if FeatureFlags.isFreeTrialAllowed && $0.vendorProductId == Product.unlimitedAnnual.rawValue {
-                    return false
-                }
-                
-                return true
-            }
         
         return availableProducts.randomElement()
     }

@@ -21,7 +21,7 @@ struct RequestReview: ViewModifier {
                     }
                     
                     Button("Sure!") {
-                        requestReview()
+                        commitRequestReview()
                         AnalyticsService.logEvent(name: "review_request_sure")
                         userState.didResponsePositivelyToReviewRequest = true
                     }
@@ -30,6 +30,16 @@ struct RequestReview: ViewModifier {
                 }
         } else {
             content
+        }
+    }
+    
+    private func commitRequestReview() {
+        if FeatureFlags.opensAppStoreReview, let url = URL(string: Constants.URLs.appReviewURL) {
+            UIApplication.shared.open(url)
+        } else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                requestReview()
+            }
         }
     }
 }

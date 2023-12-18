@@ -14,6 +14,7 @@ struct Constants {
         static let contactURL = "mailto:eilonkrauthammer@gmail.com"
         static let privacyPolicyURLString = "https://docs.google.com/document/d/1hAbRgortW7j7ONB6_qZHVBMt1uE4dv394nkeZhSO-4Q/edit?usp=sharing"
         static let termsOfServiceURLString = "https://docs.google.com/document/d/1YR3n0AHXajkWXkPnbf2JQkrhIBmxzmOUtDAz2KsLNzE/edit?usp=sharing"
+        static let appReviewURL = "https://apps.apple.com/app/id6455081726?action=write-review"
     }
     
     struct Camera {

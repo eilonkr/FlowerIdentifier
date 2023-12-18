@@ -84,7 +84,7 @@ struct RootView: View {
     }
     
     private func configureAdapty() {
-        Adapty.activate("public_live_UyS3bTME.yeo2ZKxPTRCaREWbdpBc")
+        Adapty.activate("public_live_IfOFq0Xc.S3KPCYxNb104Ek9LCbf9")
         Adapty.logLevel = .error
         DispatchQueue.global().asyncAfter(deadline: .now() + 1) {
             Adapty.getProfile { result in

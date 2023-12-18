@@ -16,4 +16,5 @@ class FeatureFlags {
     @FeatureFlag("onboardingCloseButtonShowDuration", defaultValue: 1) static var onboardingCloseButtonShowDuration
     @FeatureFlag("isHighDetailImageInput", defaultValue: false) static var isHighDetailImageInput
     @FeatureFlag("isAIChatAvailable", defaultValue: false) static var isAIChatAvailable
+    @FeatureFlag("opensAppStoreReview", defaultValue: false) static var opensAppStoreReview
 }
