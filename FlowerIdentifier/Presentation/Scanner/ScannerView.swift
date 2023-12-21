@@ -44,7 +44,7 @@ struct ScannerView: View {
                         }
                         .overlay(content: viewfinderView)
                         .cornerRadius(style: .regular)
-                        .shadow(color: .active.opacity(0.3), radius: 40)
+                        .shadow(color: .active.opacity(0.2), radius: 32)
                     
                     identificationUtilitiesIfNeeded()
                 } else if cameraModel.isCameraAuthorized == false {
