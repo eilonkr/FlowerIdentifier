@@ -35,8 +35,8 @@ struct SubscriptionProductsView: View {
             .frame(height: 50)
             .background {
                 Color.active
-                    .opacity(0.08)
-                    .cornerRadius(style: .large, strokeColor: .active.opacity(0.1), strokeWidth: 1)
+                    .opacity(0.045)
+                    .cornerRadius(style: .large, strokeColor: .active.opacity(0.2), strokeWidth: 1)
             }
             .overlay {
                 if selectedProduct == product {

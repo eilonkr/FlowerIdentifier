@@ -9,11 +9,12 @@ import SwiftUI
 import EKAppFramework
 import EKSwiftSuite
 
-enum OnboardingPage: String, Equatable, CaseIterable {
+enum OnboardingPage: String, Equatable {
     case scan
     case enableCameraAccess
     case reports
     case aiChat
+    case ratings
     case subscription
 }
 
@@ -121,7 +122,9 @@ struct OnboardingView: View {
         case .reports:
             OnboardingReportsView { setPage(.aiChat) }
         case .aiChat:
-            OnboardingChatView { setPage(.enableCameraAccess) }
+            OnboardingChatView { setPage(.ratings) }
+        case .ratings:
+            OnboardingRatingView { setPage(.enableCameraAccess) }
         case .enableCameraAccess:
             OnboardingCameraAccessView { setPage(.subscription) }
         case .subscription:

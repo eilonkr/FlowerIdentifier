@@ -70,6 +70,13 @@ struct ScannerView: View {
                 #endif
                 
                 ToolbarItem(placement: .topBarLeading, content: languageButton)
+                ToolbarItem(placement: .topBarTrailing) {
+                    CreditsButton {
+                        if userState.isSubscribed == false {
+                            appModel.showsSubscription = true
+                        }
+                    }
+                }
                 ToolbarItem(placement: .topBarTrailing, content: settingsButton)
             }
             .background(Color.background)

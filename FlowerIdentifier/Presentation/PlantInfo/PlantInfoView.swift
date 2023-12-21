@@ -11,11 +11,11 @@ import SDWebImageSwiftUI
 struct PlantInfoView: View {
     @Binding var navigationPath: [MainNavigationPath]
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.requestReview) private var requestReview
     @EnvironmentObject private var userState: UserState
     @EnvironmentObject private var localStorage: LocalStorage<RecentItem>
     @StateObject private var plantInfoModel: PlantInfoModel
     @State private var contentOffset: CGFloat = 0
-    @State private var requestReview = false
     private let headerImageAspectRatio: CGFloat = 1.5
     
     private var identificationResponse: IdentificationResponse {
@@ -118,7 +118,7 @@ struct PlantInfoView: View {
             navigationBar()
         }
         .toolbar(.hidden, for: .navigationBar)
-        .requestsReview(isPresented: $requestReview)
+//        .requestsReview(isPresented: $requestReview)
         .task {
             guard plantInfoModel.didFetchRemoteImageData == false else {
                 return
@@ -136,7 +136,7 @@ struct PlantInfoView: View {
             // Request review
             try? await Task.sleep(for: .seconds(1))
             if userState.shouldRequestReview {
-                requestReview = true
+                requestReview()
             }
         }
     }

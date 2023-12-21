@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9540EB602B34F4E10044F908 /* OnboardingRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9540EB5F2B34F4E10044F908 /* OnboardingRatingView.swift */; };
+		9540EB622B34F5740044F908 /* rating-stars.json in Resources */ = {isa = PBXBuildFile; fileRef = 9540EB612B34F5740044F908 /* rating-stars.json */; };
+		9540EB642B34F8860044F908 /* CreditsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9540EB632B34F8860044F908 /* CreditsButton.swift */; };
 		95E835B82B2DD16B0097AC18 /* FlowerIdentifierApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E835B72B2DD16B0097AC18 /* FlowerIdentifierApp.swift */; };
 		95E835BC2B2DD16C0097AC18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95E835BB2B2DD16C0097AC18 /* Assets.xcassets */; };
 		95E835BF2B2DD16C0097AC18 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95E835BE2B2DD16C0097AC18 /* Preview Assets.xcassets */; };
@@ -130,6 +133,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9540EB5F2B34F4E10044F908 /* OnboardingRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRatingView.swift; sourceTree = "<group>"; };
+		9540EB612B34F5740044F908 /* rating-stars.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "rating-stars.json"; sourceTree = "<group>"; };
+		9540EB632B34F8860044F908 /* CreditsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsButton.swift; sourceTree = "<group>"; };
 		95E835B42B2DD16B0097AC18 /* FlowerIdentifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowerIdentifier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95E835B72B2DD16B0097AC18 /* FlowerIdentifierApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerIdentifierApp.swift; sourceTree = "<group>"; };
 		95E835BB2B2DD16C0097AC18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -308,6 +314,7 @@
 				95E836B22B2DF7830097AC18 /* camera-permissions.json */,
 				95E836B32B2DF7830097AC18 /* ResponseExample.json */,
 				95E836B12B2DF7830097AC18 /* scan-animation.json */,
+				9540EB612B34F5740044F908 /* rating-stars.json */,
 				95E836B72B2DF80E0097AC18 /* GoogleService-Info.plist */,
 				95E835BB2B2DD16C0097AC18 /* Assets.xcassets */,
 			);
@@ -451,6 +458,7 @@
 				95E8364B2B2DF6C90097AC18 /* SubscriptionAnimationView.swift */,
 				95E836512B2DF6C90097AC18 /* UIFactory.swift */,
 				95E836532B2DF6C90097AC18 /* ViewfinderView.swift */,
+				9540EB632B34F8860044F908 /* CreditsButton.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -521,6 +529,7 @@
 				95E8369B2B2DF7610097AC18 /* OnboardingChatView.swift */,
 				95E8369A2B2DF7610097AC18 /* OnboardingReportsView.swift */,
 				95E8369E2B2DF7610097AC18 /* OnboardingScanView.swift */,
+				9540EB5F2B34F4E10044F908 /* OnboardingRatingView.swift */,
 				95E836982B2DF7600097AC18 /* OnboardingSubscriptionView.swift */,
 				95E836992B2DF7600097AC18 /* OnboardingView.swift */,
 				95E8369C2B2DF7610097AC18 /* ScanDemoView.swift */,
@@ -636,6 +645,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95E836B82B2DF80E0097AC18 /* GoogleService-Info.plist in Resources */,
+				9540EB622B34F5740044F908 /* rating-stars.json in Resources */,
 				95E836B62B2DF7830097AC18 /* ResponseExample.json in Resources */,
 				95E835BF2B2DD16C0097AC18 /* Preview Assets.xcassets in Resources */,
 				95E836B52B2DF7830097AC18 /* camera-permissions.json in Resources */,
@@ -680,6 +690,7 @@
 				95E835EC2B2DF6690097AC18 /* AppModel.swift in Sources */,
 				95E8362D2B2DF6A30097AC18 /* ChatItem.swift in Sources */,
 				95E8368C2B2DF7150097AC18 /* ChatMessageView.swift in Sources */,
+				9540EB602B34F4E10044F908 /* OnboardingRatingView.swift in Sources */,
 				95E836152B2DF68B0097AC18 /* Color+Extension.swift in Sources */,
 				95E8362A2B2DF6A30097AC18 /* IdentificationResponse.swift in Sources */,
 				95E836A22B2DF7610097AC18 /* OnboardingChatView.swift in Sources */,
@@ -698,6 +709,7 @@
 				95E836302B2DF6A30097AC18 /* ChatMessage.swift in Sources */,
 				95E836B02B2DF7720097AC18 /* SubscriptionInfoView.swift in Sources */,
 				95E8365E2B2DF6C90097AC18 /* UIFactory.swift in Sources */,
+				9540EB642B34F8860044F908 /* CreditsButton.swift in Sources */,
 				95E836C92B2E46510097AC18 /* RawRepresentable+Extensions.swift in Sources */,
 				95E835F82B2DF6770097AC18 /* RemoteConfigValue.swift in Sources */,
 				95E8366A2B2DF6E00097AC18 /* PhotoPickerModel.swift in Sources */,

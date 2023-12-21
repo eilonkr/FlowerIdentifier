@@ -72,28 +72,28 @@ private struct DemoChatView: View {
     }
     
     private func buildMessages(index: Int) async {
-        try? await Task.sleep(for: .seconds(0.75))
+        try? await Task.sleep(for: .seconds(0.5))
         
         if index == 0 {
-            let userMessage = ChatMessage(text: "How often should I fertilize my Snake Plant?", sentBy: .user)
+            let userMessage = ChatMessage(text: "How often should I water my Orchid flower?", sentBy: .user)
             demoChatItems.append(.message(userMessage))
             
             try? await Task.sleep(for: .seconds(0.5))
             demoChatItems.append(.loader)
             
             try? await Task.sleep(for: .seconds(1.75))
-            let aiMessage = ChatMessage(text: "Fertilize your snake plant every 4-6 weeks with a diluted, balanced liquid fertilizer during the growing season (spring and summer). Skip fertilization in fall and winter. Follow package instructions to avoid over-fertilizing.", sentBy: .ai)
+            let aiMessage = ChatMessage(text: "Water orchids when the growing medium is dry, roots are silvery-green, and the pot feels light. Ensure good drainage, adjust based on orchid type, and avoid overwatering.", sentBy: .ai)
             demoChatItems[demoChatItems.count - 1] = .message(aiMessage)
             try? await Task.sleep(for: .seconds(1.75))
         } else if index == 1 {
-            let userMessage2 = ChatMessage(text: "What could be the signs of over-fertilization?", sentBy: .user)
+            let userMessage2 = ChatMessage(text: "What could be signs of over-watering?", sentBy: .user)
             demoChatItems.append(.message(userMessage2))
             
             try? await Task.sleep(for: .seconds(0.5))
             demoChatItems.append(.loader)
             
             try? await Task.sleep(for: .seconds(1.5))
-            let aiMessage2 = ChatMessage(text: "Signs of over-fertilization in a snake plant include brown tips on leaves, yellowing, wilting, stunted growth, and leaf drop. If noticed, flush the soil with water and adjust fertilization.", sentBy: .ai)
+            let aiMessage2 = ChatMessage(text: "Signs of over-watering in orchids include yellowing leaves, root rot (dark and mushy roots), fungus or mold growth, wilting despite excess moisture, and a lack of new growth.", sentBy: .ai)
             demoChatItems[demoChatItems.count - 1] = .message(aiMessage2)
         }
     }

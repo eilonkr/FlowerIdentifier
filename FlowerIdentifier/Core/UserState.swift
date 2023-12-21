@@ -33,6 +33,6 @@ class UserState: ObservableObject, UserStateProtocol {
     }
     
     var shouldRequestReview: Bool {
-        return numberOfIdentifications == 2 || numberOfIdentifications % 4 == 0
+        return numberOfIdentifications == 1 || numberOfIdentifications % 3 == 0
     }
 }
