@@ -48,7 +48,7 @@ import EKAppFramework
     }
     
     func prefetchProducts(completion: (() -> Void)? = nil) {
-        fetchProducts(paywallId: "PlantIdentifierAI.General") { _ in
+        fetchProducts(paywallId: "FlowerIdentifier.General") { _ in
             completion?()
         }
     }
