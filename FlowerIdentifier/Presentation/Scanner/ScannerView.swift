@@ -18,7 +18,7 @@ struct ScannerView: View {
     @StateObject private var identificationModel = IdentificationModel()
     @State private var shouldActivateCamera = true
     @State private var showsIdentificationErrorAlert = false
-    @State private var showsLanguagePicker = false
+    @State private var fshowsLanguagePicker = false
     @State private var navigationPath = [MainNavigationPath]()
     
     private var isReadyForIdentification: Bool {
@@ -84,9 +84,9 @@ struct ScannerView: View {
         .errorAlert(title: "Something Went Wrong 😕",
                     message: "There was a problem identifying this plant. Please try again or choose a different photo.",
                     isPresented: $showsIdentificationErrorAlert)
-        .sheet(isPresented: $showsLanguagePicker) {
-            LanguagePicker(selection: userState.$preferredLanguage)
-        }
+//        .sheet(isPresented: $showsLanguagePicker) {
+//            LanguagePicker(selection: userState.$preferredLanguage)
+//        }
         .task(id: shouldActivateCamera) {
             if shouldActivateCamera {
                 cameraModel.startCamera()
@@ -320,7 +320,7 @@ struct ScannerView: View {
     
     private func languageButton() -> some View {
         Button {
-            showsLanguagePicker = true
+//            showsLanguagePicker = truer
         } label: {
             HStack(spacing: 4) {
                 Image(systemName: "globe")

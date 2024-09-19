@@ -13,7 +13,7 @@ protocol GPTServiceProtocol {
                          model: GPTModel,
                          temperature: Double) async throws -> String
     
-    func sendIdentificationMessage(input: ImageInput,
+    func sendIdentificationMessage(imageInput: ImageInput,
                                    model: GPTModel,
                                    language: String,
                                    temperature: Double) async throws -> IdentificationResponse

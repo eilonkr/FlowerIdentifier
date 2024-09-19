@@ -22,7 +22,7 @@ import Foundation
             
             do {
                 let identificationResponse = try await gptService.sendSearchMessage(searchTerm: text,
-                                                                                    model: .model4Turbo,
+                                                                                    model: .model4O,
                                                                                     temperature: 0.5)
                 result = .success(identificationResponse)
             } catch {

@@ -35,5 +35,4 @@ struct FlowerIdentifierApp: App {
         SDImageCache.shared.config.maxMemoryCost = 500 * 1024 * 1024
         SDImageCache.shared.config.maxDiskSize = 60 * 1024 * 1024
     }
-
 }

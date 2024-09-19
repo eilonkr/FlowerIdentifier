@@ -18,7 +18,7 @@ class GPTMockService: GPTServiceProtocol {
         return fullString
     }
     
-    func sendIdentificationMessage(input: ImageInput, 
+    func sendIdentificationMessage(imageInput: ImageInput, 
                                    model: GPTModel,
                                    language: String,
                                    temperature: Double) async throws -> IdentificationResponse {

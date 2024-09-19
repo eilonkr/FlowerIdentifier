@@ -8,10 +8,12 @@
 import UIKit
 import ChatGPTSwift
 
+typealias ImageDetail = Components.Schemas.ChatCompletionRequestMessageContentPartImage.image_urlPayload.detailPayload
+
 @MainActor class IdentificationModel: ObservableObject {
     struct IdentificationMetrics {
         let totalTime: TimeInterval
-        let detail: ImageInput.Detail
+        let detail: ImageDetail
     }
     
     struct IdentificationResult {
@@ -40,11 +42,10 @@ import ChatGPTSwift
             
             let imageData = await photoData.downsampledJPEGImageData(maxSize: CGSize(width: 1920, height: 1920))
             do {
-                let detail: ImageInput.Detail = FeatureFlags.isHighDetailImageInput ? .high : .low
-                let imageInput = ImageInput(imageType: .base64Encoded(imageData.base64EncodedString(), .jpeg),
-                                            detail: detail)
-                let response = try await gptService.sendIdentificationMessage(input: imageInput,
-                                                                              model: .model4Turbo,
+                let detail: ImageDetail = FeatureFlags.isHighDetailImageInput ? .high : .low
+                let imageInput = ImageInput(data: imageData, detail: detail)
+                let response = try await gptService.sendIdentificationMessage(imageInput: imageInput,
+                                                                              model: .model4O,
                                                                               language: language,
                                                                               temperature: 0.5)
                 

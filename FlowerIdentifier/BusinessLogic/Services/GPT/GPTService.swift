@@ -21,21 +21,21 @@ class GPTService: GPTServiceProtocol {
                          model: GPTModel,
                          temperature: Double) async throws -> String {
         return try await api.sendMessage(text: text,
-                                         model: model.rawValue,
+                                         model: model.toChatGPTSwiftModel(),
                                          systemText: createSystemText(),
                                          temperature: temperature,
                                          maxTokens: 600)
     }
     
-    func sendIdentificationMessage(input: ImageInput, 
+    func sendIdentificationMessage(imageInput: ImageInput,
                                    model: GPTModel,
                                    language: String,
                                    temperature: Double) async throws -> IdentificationResponse {
         let response = try await api.sendMessage(text: imageIdentificationPrompt(language: language),
-                                                 imageInput: input,
-                                                 model: model.rawValue,
+                                                 model: model.toChatGPTSwiftModel(),
                                                  systemText: createSystemText(),
-                                                 temperature: temperature)
+                                                 temperature: temperature,
+                                                 imageInput: imageInput)
         print("Identification response:\n\(response)")
         
         let responseData = Data(response.utf8)
@@ -46,7 +46,7 @@ class GPTService: GPTServiceProtocol {
     
     func sendSearchMessage(searchTerm: String, model: GPTModel, temperature: Double) async throws -> IdentificationResponse {
         let response = try await api.sendMessage(text: searchPrompt(searchTerm: searchTerm),
-                                                 model: model.rawValue,
+                                                 model: model.toChatGPTSwiftModel(),
                                                  systemText: createSystemText(),
                                                  temperature: temperature,
                                                  maxTokens: 2000)
