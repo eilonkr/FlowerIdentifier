@@ -12,6 +12,7 @@ struct SubscriptionView: View {
     @EnvironmentObject private var adaptyManager: AdaptyManager
     @StateObject private var subscriptionModel = SubscriptionModel()
     @State private var isLoading = false
+    @State private var purchaseTitle = ""
     
     var body: some View {
         VStack(spacing: 32) {
@@ -23,13 +24,15 @@ struct SubscriptionView: View {
                 SubscriptionProductsView(products: subscriptionModel.productDisplayItems,
                                          selectedProduct: $subscriptionModel.selectedProductDisplayItem)
                 
-                if let selectedProduct = subscriptionModel.selectedProduct,
-                   let purchaseTitle = subscriptionModel.purchaseTitle(for: selectedProduct) {
-                    Text(purchaseTitle)
-                        .font(.system(.callout, design: .rounded, weight: .regular))
-                        .multilineTextAlignment(.center)
-                        .frame(height: 44)
-                }
+                Text(purchaseTitle)
+                    .font(.system(.callout, design: .rounded, weight: .regular))
+                    .multilineTextAlignment(.center)
+                    .frame(height: 44)
+                    .task {
+                        if let selectedProduct = subscriptionModel.selectedProduct {
+                            purchaseTitle = await subscriptionModel.purchaseTitle(for: selectedProduct) ?? ""
+                        }
+                    }
                 
                 VStack(spacing: 16) {
                     subscribeButton()

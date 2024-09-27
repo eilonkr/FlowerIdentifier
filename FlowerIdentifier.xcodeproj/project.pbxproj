@@ -10,10 +10,10 @@
 		9540EB602B34F4E10044F908 /* OnboardingRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9540EB5F2B34F4E10044F908 /* OnboardingRatingView.swift */; };
 		9540EB622B34F5740044F908 /* rating-stars.json in Resources */ = {isa = PBXBuildFile; fileRef = 9540EB612B34F5740044F908 /* rating-stars.json */; };
 		9540EB642B34F8860044F908 /* CreditsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9540EB632B34F8860044F908 /* CreditsButton.swift */; };
+		95C3D5DF2CA69D5400D60918 /* SecureChatGPTSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 95C3D5DE2CA69D5400D60918 /* SecureChatGPTSwift */; };
 		95E835B82B2DD16B0097AC18 /* FlowerIdentifierApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E835B72B2DD16B0097AC18 /* FlowerIdentifierApp.swift */; };
 		95E835BC2B2DD16C0097AC18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95E835BB2B2DD16C0097AC18 /* Assets.xcassets */; };
 		95E835BF2B2DD16C0097AC18 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95E835BE2B2DD16C0097AC18 /* Preview Assets.xcassets */; };
-		95E835C72B2DD1E70097AC18 /* ChatGPTSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 95E835C62B2DD1E70097AC18 /* ChatGPTSwift */; };
 		95E835CA2B2DD1F50097AC18 /* EmailComposer in Frameworks */ = {isa = PBXBuildFile; productRef = 95E835C92B2DD1F50097AC18 /* EmailComposer */; };
 		95E835CD2B2DD22A0097AC18 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 95E835CC2B2DD22A0097AC18 /* FirebaseAnalytics */; };
 		95E835CF2B2DD22A0097AC18 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 95E835CE2B2DD22A0097AC18 /* FirebaseAnalyticsOnDeviceConversion */; };
@@ -66,7 +66,6 @@
 		95E836372B2DF6AA0097AC18 /* WikiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E836352B2DF6AA0097AC18 /* WikiService.swift */; };
 		95E8363E2B2DF6B30097AC18 /* GPTServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E836392B2DF6B30097AC18 /* GPTServiceProtocol.swift */; };
 		95E8363F2B2DF6B30097AC18 /* GPTModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E8363A2B2DF6B30097AC18 /* GPTModel.swift */; };
-		95E836402B2DF6B30097AC18 /* ChatGPTAPIWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E8363B2B2DF6B30097AC18 /* ChatGPTAPIWrapper.swift */; };
 		95E836412B2DF6B30097AC18 /* GPTService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E8363C2B2DF6B30097AC18 /* GPTService.swift */; };
 		95E836422B2DF6B30097AC18 /* GPTMockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E8363D2B2DF6B30097AC18 /* GPTMockService.swift */; };
 		95E836452B2DF6BD0097AC18 /* DebugMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E836432B2DF6BD0097AC18 /* DebugMenuView.swift */; };
@@ -185,7 +184,6 @@
 		95E836352B2DF6AA0097AC18 /* WikiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiService.swift; sourceTree = "<group>"; };
 		95E836392B2DF6B30097AC18 /* GPTServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPTServiceProtocol.swift; sourceTree = "<group>"; };
 		95E8363A2B2DF6B30097AC18 /* GPTModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPTModel.swift; sourceTree = "<group>"; };
-		95E8363B2B2DF6B30097AC18 /* ChatGPTAPIWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatGPTAPIWrapper.swift; sourceTree = "<group>"; };
 		95E8363C2B2DF6B30097AC18 /* GPTService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPTService.swift; sourceTree = "<group>"; };
 		95E8363D2B2DF6B30097AC18 /* GPTMockService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPTMockService.swift; sourceTree = "<group>"; };
 		95E836432B2DF6BD0097AC18 /* DebugMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugMenuView.swift; sourceTree = "<group>"; };
@@ -255,7 +253,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				95E835D72B2DD2710097AC18 /* SwiftUIIntrospect in Frameworks */,
-				95E835C72B2DD1E70097AC18 /* ChatGPTSwift in Frameworks */,
 				95E835CA2B2DD1F50097AC18 /* EmailComposer in Frameworks */,
 				95E836BB2B2DF8730097AC18 /* SDWebImageSwiftUI in Frameworks */,
 				95E835D92B2DD2710097AC18 /* SwiftUIIntrospect-Static in Frameworks */,
@@ -264,6 +261,7 @@
 				95E836BE2B2DF8970097AC18 /* FirebaseRemoteConfigSwift in Frameworks */,
 				95E835D12B2DD22A0097AC18 /* FirebaseAnalyticsSwift in Frameworks */,
 				95E835D42B2DD2470097AC18 /* EKAppFramework in Frameworks */,
+				95C3D5DF2CA69D5400D60918 /* SecureChatGPTSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,7 +431,6 @@
 		95E836382B2DF6AC0097AC18 /* GPT */ = {
 			isa = PBXGroup;
 			children = (
-				95E8363B2B2DF6B30097AC18 /* ChatGPTAPIWrapper.swift */,
 				95E8363D2B2DF6B30097AC18 /* GPTMockService.swift */,
 				95E8363A2B2DF6B30097AC18 /* GPTModel.swift */,
 				95E8363C2B2DF6B30097AC18 /* GPTService.swift */,
@@ -583,7 +580,6 @@
 			);
 			name = FlowerIdentifier;
 			packageProductDependencies = (
-				95E835C62B2DD1E70097AC18 /* ChatGPTSwift */,
 				95E835C92B2DD1F50097AC18 /* EmailComposer */,
 				95E835CC2B2DD22A0097AC18 /* FirebaseAnalytics */,
 				95E835CE2B2DD22A0097AC18 /* FirebaseAnalyticsOnDeviceConversion */,
@@ -593,6 +589,7 @@
 				95E835D82B2DD2710097AC18 /* SwiftUIIntrospect-Static */,
 				95E836BA2B2DF8730097AC18 /* SDWebImageSwiftUI */,
 				95E836BD2B2DF8970097AC18 /* FirebaseRemoteConfigSwift */,
+				95C3D5DE2CA69D5400D60918 /* SecureChatGPTSwift */,
 			);
 			productName = FlowerIdentifier;
 			productReference = 95E835B42B2DD16B0097AC18 /* FlowerIdentifier.app */;
@@ -623,12 +620,12 @@
 			);
 			mainGroup = 95E835AB2B2DD16B0097AC18;
 			packageReferences = (
-				95E835C52B2DD1E70097AC18 /* XCRemoteSwiftPackageReference "ChatGPTSwift" */,
 				95E835C82B2DD1F50097AC18 /* XCRemoteSwiftPackageReference "EmailComposer" */,
 				95E835CB2B2DD22A0097AC18 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				95E835D22B2DD2470097AC18 /* XCRemoteSwiftPackageReference "EKAppFramework" */,
 				95E835D52B2DD2710097AC18 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
 				95E836B92B2DF8730097AC18 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				95C3D5DD2CA69CA700D60918 /* XCRemoteSwiftPackageReference "SecureChatGPTSwift" */,
 			);
 			productRefGroup = 95E835B52B2DD16B0097AC18 /* Products */;
 			projectDirPath = "";
@@ -750,7 +747,6 @@
 				95E8365A2B2DF6C90097AC18 /* ChatMessagesView.swift in Sources */,
 				95E835EB2B2DF6690097AC18 /* LocalStorage.swift in Sources */,
 				95E836A42B2DF7610097AC18 /* OnboardingCameraAccessView.swift in Sources */,
-				95E836402B2DF6B30097AC18 /* ChatGPTAPIWrapper.swift in Sources */,
 				95E8360F2B2DF68B0097AC18 /* Font+Extension.swift in Sources */,
 				95E836712B2DF6E50097AC18 /* ShutterButton.swift in Sources */,
 				95E836602B2DF6C90097AC18 /* ViewfinderView.swift in Sources */,
@@ -980,9 +976,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		95E835C52B2DD1E70097AC18 /* XCRemoteSwiftPackageReference "ChatGPTSwift" */ = {
+		95C3D5DD2CA69CA700D60918 /* XCRemoteSwiftPackageReference "SecureChatGPTSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/eilonkr/ChatGPTSwift.git";
+			repositoryURL = "https://github.com/eilonkr/SecureChatGPTSwift";
 			requirement = {
 				branch = main;
 				kind = branch;
@@ -1031,10 +1027,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		95E835C62B2DD1E70097AC18 /* ChatGPTSwift */ = {
+		95C3D5DE2CA69D5400D60918 /* SecureChatGPTSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 95E835C52B2DD1E70097AC18 /* XCRemoteSwiftPackageReference "ChatGPTSwift" */;
-			productName = ChatGPTSwift;
+			package = 95C3D5DD2CA69CA700D60918 /* XCRemoteSwiftPackageReference "SecureChatGPTSwift" */;
+			productName = SecureChatGPTSwift;
 		};
 		95E835C92B2DD1F50097AC18 /* EmailComposer */ = {
 			isa = XCSwiftPackageProductDependency;

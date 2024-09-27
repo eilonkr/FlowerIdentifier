@@ -34,7 +34,12 @@ extension AdaptyPaywallProduct {
     }
     
     var hasFreeTrial: Bool {
-        return introductoryOfferEligibility != .ineligible && introductoryDiscount?.paymentMode == .freeTrial
+        get async throws {
+            let adaptyEligibility = try await Adapty.getProductsIntroductoryOfferEligibility(vendorProductIds: [vendorProductId])
+            let eligibility = adaptyEligibility[vendorProductId]
+            
+            return eligibility == .eligible && introductoryDiscount?.paymentMode == .freeTrial
+        }
     }
     
     var isSubscription: Bool {

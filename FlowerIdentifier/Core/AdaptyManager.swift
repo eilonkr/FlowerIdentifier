@@ -19,8 +19,8 @@ import EKAppFramework
     func purchase(_ product: AdaptyPaywallProduct, result: @escaping PurchaseResultHandler) {
         Adapty.makePurchase(product: product) { [weak self] adaptyResult in
             switch adaptyResult {
-            case .success(let profile):
-                let isSubscribed = profile.accessLevels["premium"]?.isActive ?? false
+            case .success(let profileInfo):
+                let isSubscribed = profileInfo.profile.accessLevels["premium"]?.isActive ?? false
                 self?.userState.isSubscribed = isSubscribed
                 result(.success)
             case .failure(let error):
@@ -70,7 +70,7 @@ import EKAppFramework
     }
     
     private func fetchProducts(for paywallId: String, result: @escaping ProductsResultHandler) {
-        Adapty.getPaywall(paywallId) { adaptyResult in
+        Adapty.getPaywall(placementId: paywallId) { adaptyResult in
             switch adaptyResult {
             case .success(let paywall):
                 Adapty.getPaywallProducts(paywall: paywall) { paywallProductsResult in

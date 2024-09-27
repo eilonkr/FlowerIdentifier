@@ -12,15 +12,7 @@ struct OnboardingSubscriptionView: View {
     @Binding var onboardingResult: OnboardingResult?
     @Binding var isLoading: Bool
     @EnvironmentObject private var adaptyManager: AdaptyManager
-    
-    private var subscriptionText: String {
-        if let onboardingProduct = subscriptionModel.onboardingProduct,
-           let purchaseTitle = subscriptionModel.purchaseTitle(for: onboardingProduct) {
-            return purchaseTitle
-        } else {
-            return "Get started with Flower Identifier now!"
-        }
-    }
+    @State private var subscriptionText = ""
     
     var body: some View {
         VStack(spacing: 34) {
@@ -33,6 +25,9 @@ struct OnboardingSubscriptionView: View {
             
             Text(subscriptionText)
                 .font(.system(.callout, design: .rounded, weight: .regular))
+                .task {
+                    await makeSubscriptionText()
+                }
             
             VStack(spacing: 20) {
                 VStack(spacing: 8) {
@@ -77,5 +72,14 @@ struct OnboardingSubscriptionView: View {
             .frame(height: 80, alignment: .top)
         }
         .multilineTextAlignment(.center)
+    }
+    
+    private func makeSubscriptionText() async {
+        if let onboardingProduct = subscriptionModel.onboardingProduct,
+           let purchaseTitle = await subscriptionModel.purchaseTitle(for: onboardingProduct) {
+            subscriptionText = purchaseTitle
+        } else {
+            subscriptionText = "Get started with Flower Identifier now!"
+        }
     }
 }

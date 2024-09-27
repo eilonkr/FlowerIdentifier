@@ -17,4 +17,5 @@ class FeatureFlags {
     @FeatureFlag("isHighDetailImageInput", defaultValue: false) static var isHighDetailImageInput
     @FeatureFlag("isAIChatAvailable", defaultValue: false) static var isAIChatAvailable
     @FeatureFlag("opensAppStoreReview", defaultValue: false) static var opensAppStoreReview
+    @FeatureFlag("openAIAPIPublicKey", defaultValue: "") static var openAIAPIPublicKey
 }

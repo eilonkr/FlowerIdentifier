@@ -34,9 +34,11 @@ class SubscriptionModel: ObservableObject {
     
     var products = [AdaptyPaywallProduct]() {
         didSet {
-            parseProductsToOfferings()
-            selectedProductDisplayItem = productDisplayItems.first
-            onboardingProduct = createOnboardingProduct()
+            Task(priority: .userInitiated) {
+                await parseProductsToOfferings()
+                selectedProductDisplayItem = productDisplayItems.first
+                onboardingProduct = createOnboardingProduct()
+            }
         }
     }
     
@@ -49,8 +51,8 @@ class SubscriptionModel: ObservableObject {
     @Published var selectedProductDisplayItem: ProductDisplayItem?
     
     // MARK: - Public
-    func purchaseTitle(for productModel: AdaptyPaywallProduct) -> String? {
-        return if productModel.hasFreeTrial, let introString = productModel.introString {
+    func purchaseTitle(for productModel: AdaptyPaywallProduct) async -> String? {
+        return if (try? await productModel.hasFreeTrial) == true, let introString = productModel.introString {
             "Unlock unlimited access for just \(productModel.productDescription) with \(introString)"
         } else {
             "Unlock unlimited access to Flower Identifier for just \(productModel.productDescription)"
@@ -58,23 +60,28 @@ class SubscriptionModel: ObservableObject {
     }
     
     // MARK: - Private
-    private func parseProductsToOfferings() {
+    private func parseProductsToOfferings() async {
         let sortedProducts = products.sorted { $0.price > $1.price }
-        productDisplayItems = sortedProducts
-            .compactMap { parseProductModelToDisplayItem($0) }
+        var productDisplayItems = [ProductDisplayItem]()
+        for product in sortedProducts {
+            if let displayItem = await parseProductModelToDisplayItem(product) {
+                productDisplayItems.append(displayItem)
+            }
+        }
     }
     
-    private func parseProductModelToDisplayItem(_ productModel: AdaptyPaywallProduct) -> ProductDisplayItem? {
+    private func parseProductModelToDisplayItem(_ productModel: AdaptyPaywallProduct) async -> ProductDisplayItem? {
         guard let product = Product(rawValue: productModel.vendorProductId) else {
             return nil
         }
         
+        let hasFreeTrial = (try? await productModel.hasFreeTrial) == true
         return ProductDisplayItem(productId: productModel.vendorProductId,
                                   price: productModel.price,
                                   productTitle: product.title,
                                   priceTitle: productModel.productDescription,
-                                  hasFreeTrial: productModel.hasFreeTrial,
-                                  badge: product.badgeTitle(hasFreeTrial: productModel.hasFreeTrial))
+                                  hasFreeTrial: hasFreeTrial,
+                                  badge: product.badgeTitle(hasFreeTrial: hasFreeTrial))
     }
     
     private func createOnboardingProduct() -> AdaptyPaywallProduct? {

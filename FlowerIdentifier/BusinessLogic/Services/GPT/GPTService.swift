@@ -6,13 +6,15 @@
 //
 
 import Foundation
+import SecureChatGPTSwift
 import ChatGPTSwift
 
 class GPTService: GPTServiceProtocol {
-    private let apiWrapper = ChatGPTAPIWrapper()
+    private lazy var secureChatGPTAPI = SecureChatGPTAPI(delegate: self)
+    
     private var api: ChatGPTAPI {
         get async {
-            return await apiWrapper.getAPI()
+            return await secureChatGPTAPI.getAPI()
         }
     }
     
@@ -104,5 +106,31 @@ class GPTService: GPTServiceProtocol {
         }
         
         return text
+    }
+}
+
+extension GPTService: SecureChatGPTAPIDelegate {
+    func secureChatGPTAPIDidValidatePinningSuccessfully(_ api: SecureChatGPTAPI) {
+        AnalyticsService.logEvent(name: "ssl_pining_success")
+    }
+    
+    func secureChatGPTAPI(_ api: SecureChatGPTAPI, didFailToValidatePinningWithError error: PinningValidationError) {
+        AnalyticsService.logEvent(name: "ssl_pining_failed_\(error)")
+    }
+    
+    func secureChatGPTAPIPriorityOpenAIPublicKeyHash(_ api: SecureChatGPTAPI) async -> String? {
+        if FeatureFlags.openAIAPIPublicKey.isEmpty {
+            return nil
+        }
+        
+        return FeatureFlags.openAIAPIPublicKey
+    }
+    
+    func secureChatGPITAPIEncryptedBase64OpenAIAPIToken(_ api: SecureChatGPTAPI) async -> String {
+        return FeatureFlags.encryptedBase64OpenAIAPIToken
+    }
+    
+    func secureChatGPTAPIEncodedEncrpytionKey(_ api: SecureChatGPTAPI) async -> String {
+        return FeatureFlags.encodedKey
     }
 }
