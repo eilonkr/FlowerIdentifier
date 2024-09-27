@@ -28,7 +28,7 @@ struct SubscriptionView: View {
                     .font(.system(.callout, design: .rounded, weight: .regular))
                     .multilineTextAlignment(.center)
                     .frame(height: 44)
-                    .task {
+                    .task(id: subscriptionModel.selectedProductDisplayItem) {
                         if let selectedProduct = subscriptionModel.selectedProduct {
                             purchaseTitle = await subscriptionModel.purchaseTitle(for: selectedProduct) ?? ""
                         }

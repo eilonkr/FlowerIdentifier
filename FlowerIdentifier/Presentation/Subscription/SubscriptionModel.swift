@@ -8,7 +8,7 @@
 import Foundation
 import Adapty
 
-class SubscriptionModel: ObservableObject {
+@MainActor class SubscriptionModel: ObservableObject {
     enum Product: String, Hashable {
         case unlimitedWeekly = "FlowerIdentifier.Weekly.3USD"
         case unlimitedAnnualFreeTrial = "FlowerIdentifier.Yearly.35USD.3Day.FreeTrial"
@@ -68,6 +68,8 @@ class SubscriptionModel: ObservableObject {
                 productDisplayItems.append(displayItem)
             }
         }
+        
+        self.productDisplayItems = productDisplayItems
     }
     
     private func parseProductModelToDisplayItem(_ productModel: AdaptyPaywallProduct) async -> ProductDisplayItem? {
