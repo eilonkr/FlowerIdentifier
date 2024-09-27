@@ -17,7 +17,6 @@
 		95E835CA2B2DD1F50097AC18 /* EmailComposer in Frameworks */ = {isa = PBXBuildFile; productRef = 95E835C92B2DD1F50097AC18 /* EmailComposer */; };
 		95E835CD2B2DD22A0097AC18 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 95E835CC2B2DD22A0097AC18 /* FirebaseAnalytics */; };
 		95E835CF2B2DD22A0097AC18 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 95E835CE2B2DD22A0097AC18 /* FirebaseAnalyticsOnDeviceConversion */; };
-		95E835D12B2DD22A0097AC18 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 95E835D02B2DD22A0097AC18 /* FirebaseAnalyticsSwift */; };
 		95E835D42B2DD2470097AC18 /* EKAppFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 95E835D32B2DD2470097AC18 /* EKAppFramework */; };
 		95E835D72B2DD2710097AC18 /* SwiftUIIntrospect in Frameworks */ = {isa = PBXBuildFile; productRef = 95E835D62B2DD2710097AC18 /* SwiftUIIntrospect */; };
 		95E835D92B2DD2710097AC18 /* SwiftUIIntrospect-Static in Frameworks */ = {isa = PBXBuildFile; productRef = 95E835D82B2DD2710097AC18 /* SwiftUIIntrospect-Static */; };
@@ -124,11 +123,11 @@
 		95E836B62B2DF7830097AC18 /* ResponseExample.json in Resources */ = {isa = PBXBuildFile; fileRef = 95E836B32B2DF7830097AC18 /* ResponseExample.json */; };
 		95E836B82B2DF80E0097AC18 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95E836B72B2DF80E0097AC18 /* GoogleService-Info.plist */; };
 		95E836BB2B2DF8730097AC18 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 95E836BA2B2DF8730097AC18 /* SDWebImageSwiftUI */; };
-		95E836BE2B2DF8970097AC18 /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 95E836BD2B2DF8970097AC18 /* FirebaseRemoteConfigSwift */; };
 		95E836C42B2DF8DF0097AC18 /* SettingButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E836C12B2DF8DF0097AC18 /* SettingButtons.swift */; };
 		95E836C52B2DF8DF0097AC18 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E836C22B2DF8DF0097AC18 /* SettingsView.swift */; };
 		95E836C72B2E3FFA0097AC18 /* LanguagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E836C62B2E3FFA0097AC18 /* LanguagePicker.swift */; };
 		95E836C92B2E46510097AC18 /* RawRepresentable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E836C82B2E46510097AC18 /* RawRepresentable+Extensions.swift */; };
+		95F50E222CA6F2AA003A04A8 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 95F50E212CA6F2AA003A04A8 /* FirebaseRemoteConfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -252,14 +251,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95F50E222CA6F2AA003A04A8 /* FirebaseRemoteConfig in Frameworks */,
 				95E835D72B2DD2710097AC18 /* SwiftUIIntrospect in Frameworks */,
 				95E835CA2B2DD1F50097AC18 /* EmailComposer in Frameworks */,
 				95E836BB2B2DF8730097AC18 /* SDWebImageSwiftUI in Frameworks */,
 				95E835D92B2DD2710097AC18 /* SwiftUIIntrospect-Static in Frameworks */,
 				95E835CD2B2DD22A0097AC18 /* FirebaseAnalytics in Frameworks */,
 				95E835CF2B2DD22A0097AC18 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
-				95E836BE2B2DF8970097AC18 /* FirebaseRemoteConfigSwift in Frameworks */,
-				95E835D12B2DD22A0097AC18 /* FirebaseAnalyticsSwift in Frameworks */,
 				95E835D42B2DD2470097AC18 /* EKAppFramework in Frameworks */,
 				95C3D5DF2CA69D5400D60918 /* SecureChatGPTSwift in Frameworks */,
 			);
@@ -583,13 +581,12 @@
 				95E835C92B2DD1F50097AC18 /* EmailComposer */,
 				95E835CC2B2DD22A0097AC18 /* FirebaseAnalytics */,
 				95E835CE2B2DD22A0097AC18 /* FirebaseAnalyticsOnDeviceConversion */,
-				95E835D02B2DD22A0097AC18 /* FirebaseAnalyticsSwift */,
 				95E835D32B2DD2470097AC18 /* EKAppFramework */,
 				95E835D62B2DD2710097AC18 /* SwiftUIIntrospect */,
 				95E835D82B2DD2710097AC18 /* SwiftUIIntrospect-Static */,
 				95E836BA2B2DF8730097AC18 /* SDWebImageSwiftUI */,
-				95E836BD2B2DF8970097AC18 /* FirebaseRemoteConfigSwift */,
 				95C3D5DE2CA69D5400D60918 /* SecureChatGPTSwift */,
+				95F50E212CA6F2AA003A04A8 /* FirebaseRemoteConfig */,
 			);
 			productName = FlowerIdentifier;
 			productReference = 95E835B42B2DD16B0097AC18 /* FlowerIdentifier.app */;
@@ -996,8 +993,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 10.19.1;
+				kind = exactVersion;
+				version = 11.2.0;
 			};
 		};
 		95E835D22B2DD2470097AC18 /* XCRemoteSwiftPackageReference "EKAppFramework" */ = {
@@ -1047,11 +1044,6 @@
 			package = 95E835CB2B2DD22A0097AC18 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalyticsOnDeviceConversion;
 		};
-		95E835D02B2DD22A0097AC18 /* FirebaseAnalyticsSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 95E835CB2B2DD22A0097AC18 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalyticsSwift;
-		};
 		95E835D32B2DD2470097AC18 /* EKAppFramework */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 95E835D22B2DD2470097AC18 /* XCRemoteSwiftPackageReference "EKAppFramework" */;
@@ -1072,10 +1064,10 @@
 			package = 95E836B92B2DF8730097AC18 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
 		};
-		95E836BD2B2DF8970097AC18 /* FirebaseRemoteConfigSwift */ = {
+		95F50E212CA6F2AA003A04A8 /* FirebaseRemoteConfig */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 95E835CB2B2DD22A0097AC18 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseRemoteConfigSwift;
+			productName = FirebaseRemoteConfig;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
