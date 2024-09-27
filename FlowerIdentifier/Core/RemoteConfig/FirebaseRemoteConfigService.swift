@@ -6,7 +6,6 @@
 //
 
 import Firebase
-import FirebaseRemoteConfigSwift
 
 class FirebaseRemoteConfigService: RemoteConfigClient {
     private lazy var remoteConfig: RemoteConfig = {
