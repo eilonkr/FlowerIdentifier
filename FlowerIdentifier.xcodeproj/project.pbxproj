@@ -128,6 +128,7 @@
 		95E836C72B2E3FFA0097AC18 /* LanguagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E836C62B2E3FFA0097AC18 /* LanguagePicker.swift */; };
 		95E836C92B2E46510097AC18 /* RawRepresentable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E836C82B2E46510097AC18 /* RawRepresentable+Extensions.swift */; };
 		95F50E222CA6F2AA003A04A8 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 95F50E212CA6F2AA003A04A8 /* FirebaseRemoteConfig */; };
+		95F50E2F2CA6F578003A04A8 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 95F50E2E2CA6F578003A04A8 /* PrivacyInfo.xcprivacy */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -244,6 +245,7 @@
 		95E836C22B2DF8DF0097AC18 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		95E836C62B2E3FFA0097AC18 /* LanguagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguagePicker.swift; sourceTree = "<group>"; };
 		95E836C82B2E46510097AC18 /* RawRepresentable+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RawRepresentable+Extensions.swift"; sourceTree = "<group>"; };
+		95F50E2E2CA6F578003A04A8 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -311,6 +313,7 @@
 				95E836B32B2DF7830097AC18 /* ResponseExample.json */,
 				95E836B12B2DF7830097AC18 /* scan-animation.json */,
 				9540EB612B34F5740044F908 /* rating-stars.json */,
+				95F50E2E2CA6F578003A04A8 /* PrivacyInfo.xcprivacy */,
 				95E836B72B2DF80E0097AC18 /* GoogleService-Info.plist */,
 				95E835BB2B2DD16C0097AC18 /* Assets.xcassets */,
 			);
@@ -644,6 +647,7 @@
 				95E835BF2B2DD16C0097AC18 /* Preview Assets.xcassets in Resources */,
 				95E836B52B2DF7830097AC18 /* camera-permissions.json in Resources */,
 				95E836B42B2DF7830097AC18 /* scan-animation.json in Resources */,
+				95F50E2F2CA6F578003A04A8 /* PrivacyInfo.xcprivacy in Resources */,
 				95E835BC2B2DD16C0097AC18 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
